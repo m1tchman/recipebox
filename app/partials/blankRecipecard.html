@@ -1,0 +1,71 @@
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<link type="text/css" rel="stylesheet" href="../css/vendor/ichiro.css" />
+<link type="text/css" rel="stylesheet" href="../css/RecipeCard.css"/>
+<script type="text/javascript" src="../app/newRecipe.js"></script>
+<script type="text/javascript" src="../app/app.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/vendor/bootstrap.min.css"></link>
+<link rel="stylesheet" type="text/css" href="../css/vendor/animate.css"></link>
+
+
+<div style="margin-top: 75px;"">
+	<form action="" method="POST"">
+		<input id="Name" ng-model="ctrl.Name" type="text" display="block" class="input_long" placeholder="Recipe Name">
+		<input id="User" ng-model="ctrl.User" type="text" display="block" class="input_long" placeholder="Chef">
+		<select id="FoodCat" ng-model="ctrl.FoodCat" class="input_med" name="Food Category">
+		  <option value="Meat">Meat</option>
+		  <option value="Fish">Fish</option>
+		  <option value="Veggie">Veggie</option>
+		  <option value="Salad">Salad</option>
+		  <option value="Pasta">Pasta</option>
+		  <option value="Dessert">Dessert</option>
+		</select>
+</div>
+  
+<div>
+  <input id="Image" ng-model="ctrl.Image" type="text" display="block" class="input_long" placeholder="Image Url">
+</div>
+        
+<div id='Ingredients'>
+    <div style="margin: 5px" id='Ingredient' ng-repeat="Ingredient in ctrl.Ingredients">
+            <class="form-group">
+                <input ng-model="Ingredient.Qty" type="text" class="input_short" placeholder="Qty">
+                <select ng-model="Ingredient.Measure" class="input_med" name="Food Category">
+                  <option value="Tsp">Tsp.</option>
+                  <option value="Tbsp">Tbsp</option>
+                  <option value="ml.">ml.</option>
+                  <option value="brams">grams</option>
+                  <option value="Cup">cup</option>
+                  <option value="Litre">litre</option>
+                  <option value="fl. oz">fl. oz</option>
+                  <option value="ounces">ounces</option>
+                  <option value="pound">pound</option>
+                  <option value="kg">kg.</option>
+                  <option value="Dash">Dash</option>
+                  <option value="Pinch">Pinch</option>
+                  <option value="Squeeze">Squeeze</option>
+                </select>
+                <input ng-model="Ingredient.Ingredient" type="text" class="input_long" placeholder="Ingredient">
+                <input ng-model="Ingredient.Note" type="text" class="input_long" placeholder="Note">
+                <button ng-click="ctrl.removeIngredient(ctrl.Ingredients.indexOf(Ingredient))" type="button" class="btn btn-primary btn-sm">Remove</button>
+            </class="form-group">
+        </div>
+            <button ng-click="ctrl.addIngredient()" type="button" class="btn btn-primary btn-sm" >Add Another Ingredient</button>
+</div>
+
+<div>
+    <div class="direction_box" id='Directions'>
+        <div id='Direction' ng-repeat="Direction in ctrl.Directions track by $index">
+            <class="form-group">
+                  <input ng-model="Direction.Direction" type="text" class="input_direction" placeholder="Add Direction">
+                  <button ng-click="ctrl.removeDirection(ctrl.Directions.indexOf(Direction))" type="button" class="btn btn-primary btn-sm">Remove</button>
+            </class="form-group">
+        </div>
+            <button ng-click="ctrl.addDirection()" class="btn btn-primary btn-sm">Add Another Direction</button>
+    </div>
+</div>
+
+<div style="margin-bottom: 50px">
+    <button style="margin-right: 20px" class="btn btn-primary btn lg" type="submit" ng-click="ctrl.SaveRecipe()">SAVE</button>
+    <button class="btn btn-danger btn lg" type="submit" ng-click="ctrl.BrowseList()">Cancel</button>
+</div>
+

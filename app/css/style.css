@@ -1,0 +1,98 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic);
+
+body {font-family: 'Comic Sans Pro', sans-serif; font-size: 14px; color: #666;}
+
+.row-centered {
+    text-align:center;
+}
+
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
+
+.input_short {
+    border-radius: 25px;
+    font-size: 16;
+    padding: 10px;
+    width: 75px;
+    height: 30px;
+}
+
+.input_med {
+    border-radius: 25px;
+    font-size: 16;
+    padding: 10px;
+    width: 100px;
+    height: 30px;
+}
+
+.input_long {
+    border-radius: 25px;
+    font-size: 16;
+    padding: 10px;
+    width: 300px;
+    height: 30px;
+}
+.direction_box {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    outline-style: dotted;
+    height: 400px;
+    width: 900px;
+    text-align: wrap;
+}
+
+.input_direction {
+    border-radius: 25px;
+    font-size: 14px;
+    padding: 10px;
+    width: 700px;
+    height: 35px;
+}
+
+
+.word_wrap {
+    word-wrap: break-word;
+}
+
+.option_box {
+    text-align: center;
+}
+
+.button {
+  margin-top: 20px;
+  width: 100px;
+  line-height: 100px;
+  font-color: black;
+  font-weight: bold;
+  padding: 0 40px;
+  background: lightblue;
+  border: none;
+}
+
+.buttton:hover {
+  background-color: green;
+  font-color: white;
+}
+
+.btn.btn {
+  vertical-align: middle;
+}
+

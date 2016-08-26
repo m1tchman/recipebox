@@ -1,0 +1,52 @@
+<div id="Recipe-details">
+  <div class="container">
+        <h1 class="text-center"><!--Display our Recipe Name here-->
+      {{ctrl.recipe.Name}}
+      </h1>
+    <div class="row">
+      <div class="col-xs-3">
+        <!--Show the image of the dish here on the left of the page-->
+        <img src="{{ctrl.recipe.Image}}">
+      </div>
+    <div class="col-xs-9">
+        <!--Display all the Ingredients followed by the Directions for the Recipe-->
+      <div class="pull-right">
+        	<h4>Chef : {{ctrl.recipe.User}}</h4>
+          <br>
+        	<h4>Category : {{ctrl.recipe.FoodCat}}</h4>
+      </div>
+
+      <div>
+          <H3>Ingredients</H3>
+          <ul>
+            <li ng-repeat="item in ctrl.recipe.Ingredients">
+              	<p>{{item.Qty}} {{item.Measure}} {{item.Ingredient}} {{item.Note}}</p>
+            </li>
+          </ul>
+      </div>
+
+      <div class="Recipe-details">
+          <h3>Directions</h3>
+          <ol>
+            <li ng-repeat="item in ctrl.recipe.Directions">
+                {{item.Direction}}
+            </li>
+          </ol>
+      </div>
+    </div>    
+  </div>
+
+<div class="row">
+  <div class="col-md-6">
+      <!--This is a button take you back to the List of Recipes page-->
+        <button style="margin-right: 20px" class="btn btn-primary btn lg" type="submit" ng-click="ctrl.BrowseList()">GO BACK</button>
+              <!--This is a button take you back to the Home page-->
+         <button class="btn btn-primary btn lg" type="submit" ng-click="ctrl.StartEntry()">Add New Recipe</button>
+  </div>
+
+    <div class="col-md-6">
+      <a href="#/recipes/edit/{{ctrl.recipe._id}}">Edit</a>  |  
+      <a ng-click="ctrl.deleteRecipe()">Delete</a>
+    </div>
+  </div>
+</div>

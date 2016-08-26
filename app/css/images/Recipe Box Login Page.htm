@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://localhost:3000/#/addNew -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+<title>Recipe Box Login Page</title>
+<!-- <script type="text/javascript" src="js/vendor/jquery-3.1.0.min.js"></script> -->
+<script src="./Recipe Box Login Page_files/angular.js"></script>
+<script src="./Recipe Box Login Page_files/angular-route.js"></script>
+<!-- <script src="js/vendor/Parallax.js"></script> -->
+<link rel="stylesheet" href="./Recipe Box Login Page_files/font-awesome.min.css">
+<link type="text/css" rel="stylesheet" href="./Recipe Box Login Page_files/style.css">
+<link type="text/css" rel="stylesheet" href="./Recipe Box Login Page_files/ichiro.css">
+<link type="text/css" rel="stylesheet" href="./Recipe Box Login Page_files/RecipeCard.css">
+<script type="text/javascript" src="./Recipe Box Login Page_files/app.js"></script>
+<script type="text/javascript" src="./Recipe Box Login Page_files/HomeCtrl.js"></script>
+<script type="text/javascript" src="./Recipe Box Login Page_files/blankRecipecard.ctrl.js"></script>
+<link rel="stylesheet" type="text/css" href="./Recipe Box Login Page_files/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./Recipe Box Login Page_files/animate.css">
+</head>
+
+<body ng-app="RecipeApp" class="ng-scope">
+  
+  <div class="container">
+    <!-- ngView: --><ng-view class="ng-scope">
+<script src="./Recipe Box Login Page_files/jquery.min.js" class="ng-scope"></script>
+<script src="./Recipe Box Login Page_files/Parallax.js" class="ng-scope"></script>
+<script type="text/javascript" src="./Recipe Box Login Page_files/jquery.leanModal.min.js" class="ng-scope"></script>
+<link rel="stylesheet" href="./Recipe Box Login Page_files/font-awesome.min.css" class="ng-scope">
+<link type="text/css" rel="stylesheet" href="./Recipe Box Login Page_files/style.css" class="ng-scope">
+<link type="text/css" rel="stylesheet" href="./Recipe Box Login Page_files/ichiro.css" class="ng-scope">
+<link type="text/css" rel="stylesheet" href="./Recipe Box Login Page_files/RecipeCard.css" class="ng-scope">
+<script type="text/javascript" src="./Recipe Box Login Page_files/newRecipe.js" class="ng-scope"></script>
+<script type="text/javascript" src="./Recipe Box Login Page_files/app(1).js" class="ng-scope"></script>
+<link rel="stylesheet" type="text/css" href="./Recipe Box Login Page_files/bootstrap.min.css" class="ng-scope">
+<link rel="stylesheet" type="text/css" href="./Recipe Box Login Page_files/animate.css" class="ng-scope">
+
+<div class="ng-scope">
+	<form action="http://localhost:3000/" method="POST" class="ng-pristine ng-valid">
+		<input id="Name" type="text" display="block" class="input_long" placeholder="Recipe Name">
+		<input id="user" type="text" display="block" class="input_long" placeholder="Chef">
+		<select id="foodCat" class="input_med" name="Food Category">
+		  <option value="Meat">Meat</option>
+		  <option value="Fish">Fish</option>
+		  <option value="Veggie">Veggie</option>
+		  <option value="Salad">Salad</option>
+		  <option value="Pasta">Pasta</option>
+		  <option value="Dessert">Dessert</option>
+		</select>
+    </form>
+</div>
+        
+<div id="Ingredients" class="ng-scope">
+    <!-- ngRepeat: Ingredient in ctrl.Ingredients --><div id="Ingredient" ng-repeat="Ingredient in ctrl.Ingredients" class="ng-scope">
+            <class="form-group">
+                <input ng-model="Ingredient.Qty" type="text" class="input_short ng-pristine ng-untouched ng-valid ng-empty" placeholder="Qty">
+                <select ng-model="Ingredient.Measure" class="input_med ng-pristine ng-untouched ng-valid ng-empty" name="Food Category"><option value="? string: ?"></option>
+                  <option value="Tsp">Tsp.</option>
+                  <option value="TBSP">TBSP</option>
+                  <option value="Mil">ml.</option>
+                  <option value="Grams">grams</option>
+                  <option value="Cup">cup</option>
+                  <option value="Litre">litre</option>
+                  <option value="Litre">fl. oz</option>
+                  <option value="Dessert">ounces</option>
+                  <option value="Tsp">pound</option>
+                  <option value="TBSP">kg.</option>
+                  <option value="Mil">dash</option>
+                  <option value="Grams">pinch</option>
+                  <option value="Litre">squeeze</option>
+                </select>
+                <input ng-model="Ingredient.Ingredient" type="text" class="input_long ng-pristine ng-untouched ng-valid ng-empty" placeholder="Ingredient">
+                <input ng-model="Ingredient.Note" type="text" class="input_long ng-pristine ng-untouched ng-valid ng-empty" placeholder="Note">
+            </class="form-group">
+        </div><!-- end ngRepeat: Ingredient in ctrl.Ingredients -->
+            <h3><button ng-click="ctrl.addIngredient()" type="button" class="btn btn-primary btn-sm">Add Another Ingredient</button></h3>
+</div><span class="ng-binding ng-scope">
+[{"Qty":"","Measure":"","Ingredient":"","Note":""}]
+</span><div class="ng-scope">
+    <div class="direction_box" id="Directions">
+        <!-- ngRepeat: Direction in ctrl.Directions --><div id="Direction" ng-repeat="Direction in ctrl.Directions" class="ng-scope">
+            <class="form-group">
+                  <input ng-model="Direction.Direction" type="text" class="input_direction ng-pristine ng-untouched ng-valid ng-empty" placeholder="" add="" ""direction"="">
+            </class="form-group">
+        </div><!-- end ngRepeat: Direction in ctrl.Directions -->
+            <h3><button ng-click="ctrl.addDirection()" class="btn btn-primary btn-sm">Add Another Direction</button></h3>
+    </div>
+</div><span class="ng-binding ng-scope">
+[{"Direction":""}]
+</span><div class="ng-scope">
+    <button type="submit">Submit</button>
+</div>
+
+</ng-view>
+  </div>
+
+
+</body></html>

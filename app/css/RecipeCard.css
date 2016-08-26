@@ -1,0 +1,25 @@
+/* recipe card */
+.Details_subheader{
+color: rgb(100, 175, 30);
+font-family: Arvo;
+font-size: 18px;
+text-transform: none;
+text-decoration: none;
+font-weight: normal;
+font-style: normal;"
+}
+.action-btn {
+color: rgb(255, 255, 255);
+font-family: Arvo;
+font-size: 13px;
+text-transform: none;
+text-decoration: none;
+font-weight: normal; font-style: normal;
+background-color: rgb(145, 196, 20);
+}
+
+.Recipe-details{
+  max-width: 500px;
+}
+
+

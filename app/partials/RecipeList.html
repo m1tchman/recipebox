@@ -1,0 +1,36 @@
+<div class="panel panel-defaault">
+  <div class="panel-heading">
+    <h2>Mitch's Recipes</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+      <label for="search">Search Recipes</label>
+      <input class="input_search" ng-model="ctrl.search" type="text" class="form-control" id="search">
+  </div>
+
+  <div class="col-md-4">
+      <a class="btn btn-primary" ng-click="ctrl.StartEntry()">Add New Recipe</a>
+
+  </div>
+</div>
+<!-- 
+<div class="form-group col-md-4">
+  <label for="search">Sort</label> -->
+  
+  <!--Show the list of sort options form the controller in this dropdown-->
+<!--   <select class="form-control" ng-options="option as option.label for option in ctrl.sortOptions" ng-model="ctrl.sortoption"></select>
+</div> -->
+
+<div class="panel-body">
+  <div class='row'>
+      <div class="col-md-4" ng-repeat="recipe in ctrl.recipe | filter:{Name:ctrl.search} | orderBy:ctrl.sortoption.sortField:ctrl.sortoption.reverse | limitTo:ctrl.recipePerPage:ctrl.curPage * ctrl.recipePerPage" ng-click="ctrl.goToRecipe(recipe)">
+          <div>
+            <!--Display the Recipe Name here-->
+            <h3>{{recipe.Name}}</h3>
+            <img src="{{recipe.Image}}">
+          </div>
+      </div>
+  </div>
+</div>
